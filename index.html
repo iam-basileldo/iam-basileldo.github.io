@@ -24,17 +24,27 @@
       padding: 20px;
       text-align: center;
     }
+    .profile-container {
+       position: relative;
+       display: inline-block;
+    }
     .profile-pic {
       width: 200px;
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
     }
      .icon {
        width: 50px;
        height: 50px;
        object-fit: cover;
+       position: absolute;
+       top: -10px;
+       left: -10px;
+       z-index: 1;
     }
   </style>
 </head>
@@ -44,10 +54,12 @@
   </header>
   
   <main>
-    <img class="profile-pic" src="profile-picture.JPEG" alt="Profile Pic">
-    <a href="https://www.linkedin.com/in/basil-eldo-2019/" target="_blank">
-      <img class="icon" src="social.png" alt="LinkedIn Profile">
-    </a>
+    <div class="profile-container">
+      <img class="profile-pic" src="profile-picture.JPEG" alt="Profile Pic">
+      <a href="https://www.linkedin.com/in/basil-eldo-2019/" target="_blank">
+        <img class="icon" src="social.png" alt="LinkedIn Profile">
+      </a>
+    </div>
     <h2>Sorry, Still Under Development</h2>
     <p>Thank you for your patience!</p>
   </main>
