@@ -45,6 +45,39 @@
        top: 150px;
        left: 150px;
        z-index: 2;
+	transition: transform 0.3s ease;
+    }
+	.icon:hover,
+	.icon:focus {
+  	transform: scale(1.1);
+	}
+	.button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #777;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .button:hover,
+    .button:focus {
+      transform: scale(1.1);
+    }
+    .button.selected {
+      background-color: #fff;
+      color: #777;
+    }
+
+    .divider {
+      width: 50%;
+      height: 2px;
+      background-color: #ccc;
+      margin: 20px auto;
     }
   </style>
 </head>
@@ -60,8 +93,35 @@
         <img class="icon" src="social.png" alt="LinkedIn Profile">
       </a>
     </div>
+
+	<div class="divider"></div>
+
+	 <div class="button-container">
+      <a href="#bio" class="button selected">Bio</a>
+      <a href="#experience" class="button">Experience</a>
+      <a href="#education" class="button">Education</a>
+      <a href="#projects" class="button">Projects</a>
+      <a href="#contact" class="button">Contact</a>
+    </div>
+
     <h2>Sorry, Still Under Development</h2>
     <p>Thank you for your patience!</p>
   </main>
+<script>
+	const buttons = document.querySelectorAll('.button');
+
+  function handleButtonClick(event) {
+    // Remove the 'selected' class from all buttons
+    buttons.forEach(button => button.classList.remove('selected'));
+
+    // Add the 'selected' class to the clicked button
+    event.target.classList.add('selected');
+  }
+
+  // Attach click event listeners to all buttons
+  buttons.forEach(button => {
+    button.addEventListener('click', handleButtonClick);
+  });
+</script>
 </body>
 </html>
