@@ -18,8 +18,21 @@
     
     h1 {
       margin: 0;
+      position: relative;
+      animation: slideLeft 1.5s ease forwards;
     }
     
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(-45%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
     main {
       padding: 20px;
       text-align: center;
